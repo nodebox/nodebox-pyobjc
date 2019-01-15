@@ -22,7 +22,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		611B5F4F13E2F0DB0009BC14 /* libpython2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 611B5F4E13E2F0DB0009BC14 /* libpython2.5.dylib */; };
 		611CC49810BA8B9E00B55455 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 611CC48110BA8B9E00B55455 /* Credits.rtf */; };
 		611CC49C10BA8B9E00B55455 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 611CC48910BA8B9E00B55455 /* InfoPlist.strings */; };
 		611CC4A110BA8B9E00B55455 /* NodeBox.icns in Resources */ = {isa = PBXBuildFile; fileRef = 611CC49310BA8B9E00B55455 /* NodeBox.icns */; };
@@ -61,6 +60,7 @@
 		6155D9F413E2B79E00675A92 /* CHANGES.md in Resources */ = {isa = PBXBuildFile; fileRef = 6155D9F213E2B79E00675A92 /* CHANGES.md */; };
 		6155D9F513E2B79E00675A92 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6155D9F313E2B79E00675A92 /* README.md */; };
 		615FA75C10BAC855000F45F9 /* DrawingPrimitives.py in Resources */ = {isa = PBXBuildFile; fileRef = 615FA75B10BAC855000F45F9 /* DrawingPrimitives.py */; };
+		618333E821EDD06800908EA9 /* libpython.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 618333E721EDD06800908EA9 /* libpython.tbd */; };
 		61972F2D10BAD1DC0007D375 /* macboot.py in Resources */ = {isa = PBXBuildFile; fileRef = 61972F2C10BAD1DC0007D375 /* macboot.py */; };
 		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
@@ -215,6 +215,7 @@
 		6155D9F213E2B79E00675A92 /* CHANGES.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGES.md; sourceTree = "<group>"; };
 		6155D9F313E2B79E00675A92 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		615FA75B10BAC855000F45F9 /* DrawingPrimitives.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = DrawingPrimitives.py; sourceTree = "<group>"; };
+		618333E721EDD06800908EA9 /* libpython.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libpython.tbd; path = usr/lib/libpython.tbd; sourceTree = SDKROOT; };
 		61972F2C10BAD1DC0007D375 /* macboot.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = macboot.py; sourceTree = "<group>"; };
 		8D15AC360486D014006FF6A4 /* NodeBox-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NodeBox-Info.plist"; sourceTree = "<group>"; };
 		8D15AC370486D014006FF6A4 /* NodeBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NodeBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -225,7 +226,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				611B5F4F13E2F0DB0009BC14 /* libpython2.5.dylib in Frameworks */,
+				618333E821EDD06800908EA9 /* libpython.tbd in Frameworks */,
 				8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,6 +311,7 @@
 		2A37F4C3FDCFA73011CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				618333E721EDD06800908EA9 /* libpython.tbd */,
 				1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */,
 				1058C7A8FEA54F5311CA2CBB /* Other Frameworks */,
 			);
@@ -394,7 +396,7 @@
 			buildConfigurationList = 61EF506410BC26F9006DEF6C /* Build configuration list for PBXLegacyTarget "Clean Extensions" */;
 			buildPhases = (
 			);
-			buildToolPath = python2.5;
+			buildToolPath = python;
 			buildWorkingDirectory = libs;
 			dependencies = (
 			);
@@ -408,7 +410,7 @@
 			buildConfigurationList = 61FFC03B10BAD915009AF371 /* Build configuration list for PBXLegacyTarget "Build Extensions" */;
 			buildPhases = (
 			);
-			buildToolPath = python2.5;
+			buildToolPath = python;
 			buildWorkingDirectory = libs;
 			dependencies = (
 			);
@@ -684,13 +686,12 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = NodeBox_Prefix.pch;
 				INFOPLIST_FILE = "NodeBox-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = NodeBox;
 			};
@@ -702,12 +703,11 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = NodeBox_Prefix.pch;
 				INFOPLIST_FILE = "NodeBox-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = NodeBox;
 			};
